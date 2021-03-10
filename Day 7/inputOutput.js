@@ -2,7 +2,7 @@
 
 // input using build prompt-sync
 // before use require (npm install prompt-sync) in terminal
-const prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")({sigint:true});
 
 //function with prompt
 function tinggiBadan() {
@@ -24,5 +24,5 @@ function beratBadan() {
   });
 }
 
-beratBadan();
+// beratBadan();
 tinggiBadan();
