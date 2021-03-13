@@ -27,12 +27,12 @@ createArray();
 /*
  * Code Here!
  * */
-console.log(data);
+console.log(cleen(data));
 
 function clean(data) {
   // Code here
   const cleanedData = data.filter((d) => d != null);
-  console.log(cleanedData);
+  // console.log(cleanedData);
   return cleanedData;
 
 }
