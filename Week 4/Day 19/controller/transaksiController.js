@@ -123,10 +123,22 @@ const update = (req, res) => {
           });
         }
         //if success
-        return res.status(201).json({
-          message: "Success",
-          data: result,
-        });
+    
+            let sqlGetOne =
+              "SELECT t.id, p.nama as nama_pelanggan, b.nama as nama_barang, b.harga, pem.nama as nama_pemasok, t.waktu, t.jumlah, t.total FROM transaksi t JOIN barang b ON t.id_barang = b.id JOIN pelanggan p ON p.id = t.id_pelanggan JOIN pemasok pem ON b.id_pemasok = pem.id WHERE t.id = ?";
+          
+            mysql.query(sqlGetOne, [req.params.id], (err, result) => {
+              if (err) {
+                return res.status(500).json({
+                  message: "Internal Sever Error",
+                  error: err,
+                });
+              }
+              return res.status(201).json({
+                message: "Success",
+                data: result[0],
+              });
+            });
       }
     );
   });
