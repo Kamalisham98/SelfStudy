@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "arif",
-    "database": "penjualan_development",
+    "database": "database_assignment_penjulaan_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

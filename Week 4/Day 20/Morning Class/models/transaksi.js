@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Transaksi extends Model {
+  class transaksi extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Transaksi.init(
+  transaksi.init(
     {
       id_barang: DataTypes.INTEGER,
       id_pelanggan: DataTypes.INTEGER,
@@ -20,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      paranoid: true, //Activate soft delete
-      timestamps: true, // timestamps
-      freezeTableName: true, // For module name that use english
+      paranoid: true, // Activate soft delete
+      timestamps: false, // timestamps
+      freezeTableName: true, // because we use Indonesian
       modelName: "transaksi",
     }
   );
-  return Transaksi;
+  return transaksi;
 };
